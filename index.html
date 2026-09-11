@@ -1,1 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ephy Store</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7f5;
+      color: #222;
+    }
+
+    header {
+      background: #168a45;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      font-size: 15px;
+    }
+
+    .hero {
+      background: white;
+      padding: 25px 15px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      color: #168a45;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    .products {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .product {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .product .emoji {
+      font-size: 65px;
+      margin-bottom: 10px;
+    }
+
+    .product h3 {
+      margin-bottom: 8px;
+      color: #168a45;
+    }
+
+    .product p {
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: #168a45;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    button:hover {
+      background: #106b35;
+    }
+
+    .contact {
+      background: #168a45;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 20px;
+    }
+
+    .contact h2 {
+      margin-bottom: 10px;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      margin-top: 15px;
+      background: white;
+      color: #168a45;
+      padding: 12px 20px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #123;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🥚 Ephy Store</h1>
+    <p>Fresh Eggs • Chicken • Vegetables</p>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Ephy Store</h2>
+    <p>Quality farm products delivered with convenience.</p>
+  </section>
+
+  <section class="products">
+
+    <div class="product">
+      <div class="emoji">🥚</div>
+      <h3>Fresh Eggs</h3>
+      <p>Fresh and quality eggs.</p>
+      <div class="price">Order Now</div>
+      <button onclick="order('Fresh Eggs')">Order on WhatsApp</button>
+    </div>
+
+    <div class="product">
+      <div class="emoji">🐔</div>
+      <h3>Chicken</h3>
+      <p>Quality chicken for your home or business.</p>
+      <div class="price">Order Now</div>
+      <button onclick="order('Chicken')">Order on WhatsApp</button>
+    </div>
+
+    <div class="product">
+      <div class="emoji">🥬</div>
+      <h3>Vegetables</h3>
+      <p>Fresh farm vegetables.</p>
+      <div class="price">Order Now</div>
+      <button onclick="order('Vegetables')">Order on WhatsApp</button>
+    </div>
+
+  </section>
+
+  <section class="contact">
+    <h2>Need to Make an Order?</h2>
+    <p>Contact Ephy Store directly through WhatsApp.</p>
+
+    <a class="whatsapp"
+       href="https://wa.me/254796288206"
+       target="_blank">
+       💬 Chat on WhatsApp
+    </a>
+  </section>
+
+  <footer>
+    © 2026 Ephy Store. All Rights Reserved.
+  </footer>
+
+  <script>
+    function order(product) {
+      const message =
+        "Hello Ephy Store, I would like to order " + product + ".";
+
+      const whatsapp =
+        "https://wa.me/254796288206?text=" +
+        encodeURIComponent(message);
+
+      window.open(whatsapp, "_blank");
+    }
+  </script>
+
+</body>
+</html>
